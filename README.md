@@ -1,33 +1,32 @@
-# Cardiovascular_classification
-AlmaBetter capstone project 
-
-The dataset is from an ongoing cardiovascular study on residents of the town of Framingham,
-Massachusetts. The classification goal is to predict whether the patient has a 10-year risk of
-future coronary heart disease (CHD). The dataset provides the patients’ information. It includes
-over 4,000 records and 15 attributes.
-
-Data Description
-Demographic:
-- Sex: male or female("M" or "F")
-- Age: Age of the patient;(Continuous - Although the recorded ages have been truncated to
-whole numbers, the concept of age is continuous)
-Behavioral
-- is_smoking: whether or not the patient is a current smoker ("YES" or "NO")
-- Cigs Per Day: the number of cigarettes that the person smoked on average in one day.(can be
-considered continuous as one can have any number of cigarettes, even half a cigarette.)
-Medical( history)
-- BP Meds: whether or not the patient was on blood pressure medication (Nominal)
-- Prevalent Stroke: whether or not the patient had previously had a stroke (Nominal)
-- Prevalent Hyp: whether or not the patient was hypertensive (Nominal)
-- Diabetes: whether or not the patient had diabetes (Nominal)
-Medical(current)
-- Tot Chol: total cholesterol level (Continuous)
-- Sys BP: systolic blood pressure (Continuous)
-- Dia BP: diastolic blood pressure (Continuous)
-- BMI: Body Mass Index (Continuous)
-- Heart Rate: heart rate (Continuous - In medical research, variables such as heart rate though in
-fact discrete, yet are considered continuous because of large number of possible values.)
-- Glucose: glucose level (Continuous)
-Predict variable (desired target)
-- 10-year risk of coronary heart disease CHD(binary: “1”, means “Yes”, “0” means “No”) -
-DV
+The dataset consists of data from an cardiovascular study done on the residents of town of Farmingham, 
+Masachusettes. Our goal was to implement various Machine Learning models to predict whether the 
+patient has a 10-year risk of future coronary heart disease. 
+The dataset contains features such as: Sex, Age, behavioral information related to smoking, medical 
+history information and current medical information pertaining to BP, prevalent stroke, Hypertension, 
+Cholesterol levels, BP, Diabetes indicator, glucose levels, and the target variable – whether the patient 
+has risk of coronary heart disease.
+The approach we followed:
+• Data Understanding
+• EDA
+• Data Preprocessing
+• Building Models
+• Choosing the best Model based on the appropriate evaluation metric for our problem statement
+The data we were given mostly contained medical data about patients. The data provided was structured 
+and in a tabular format. Our first step was to understand each of the features, exploring the permissible 
+values each of these features can take, and understanding the impact of having a risk of coronary heart 
+disease. 
+We performed univariate and bivariate analysis on the data to understand their distributions and 
+relationship with the target variable. We saw that the data has a class imbalance. We also performed 
+multivariate analysis to check for correlations between the features, and the target variable.
+Our next step was to preprocess the data. Here we performed missing value imputation, applied 
+transformation to reduce skewness in the data, and applied binning on features. We also used SMOTE, 
+and assigned class weights to treat the class imbalance. 
+We chose recall as our evaluation metric to focus more on. Recall gives us the sensitivity. If we classify a 
+person who has risk of heart disease wrongly, this will have higher implications as opposed to 
+misclassifying a patient who does not have the risk. 
+We built various models like – Decision Trees, Logistic Regression, Support Vector Machine, Random 
+Forest and XGBoost. 
+We performed cross validation and hyper parameter tuning and each of these models. XGBoost gave us 
+the best recall score. However, with SMOTE, we were not able to increase our recall more. Using class 
+weights, we got a better recall score. Using class weights, or using SMOTE, XGBoost model performed 
+better than the other models. 
