@@ -5,16 +5,19 @@ The dataset contains features such as: Sex, Age, behavioral information related 
 history information and current medical information pertaining to BP, prevalent stroke, Hypertension, 
 Cholesterol levels, BP, Diabetes indicator, glucose levels, and the target variable – whether the patient 
 has risk of coronary heart disease.
+
 The approach we followed:
-• Data Understanding
-• EDA
-• Data Preprocessing
-• Building Models
-• Choosing the best Model based on the appropriate evaluation metric for our problem statement
+- Data Understanding
+- EDA
+- Data Preprocessing
+- Building Models
+- Choosing the best Model based on the appropriate evaluation metric for our problem statement
+
 The data we were given mostly contained medical data about patients. The data provided was structured 
 and in a tabular format. Our first step was to understand each of the features, exploring the permissible 
 values each of these features can take, and understanding the impact of having a risk of coronary heart 
 disease. 
+
 We performed univariate and bivariate analysis on the data to understand their distributions and 
 relationship with the target variable. We saw that the data has a class imbalance. We also performed 
 multivariate analysis to check for correlations between the features, and the target variable.
